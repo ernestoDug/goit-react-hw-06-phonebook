@@ -1,6 +1,13 @@
 // npm install redux
 // npm i react-toastify
 // npm install react-redux
+// npm install @redux-devtools/extension
+// ****************************************************
+// import { createStore } from "redux";
+// import { devToolsEnhancer } from "@redux-devtools/extension";
+// import { useSelector } from "react-redux";
+
+
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { ToastContainer } from 'react-toastify';
@@ -58,6 +65,7 @@ export default function App() {
   };
 
   return (
+    <div className= {css.phoneBookWrapp}>
     <div className={css.forms}>
       <ToastContainer
         position="top-center"
@@ -71,11 +79,14 @@ export default function App() {
         pauseOnHover
         theme="colored"
       />
+      <div className={css.miniWrapp}> 
       <h1>Телефонна книга</h1>
       <ContactForm
         // пропс метод  зберігання з форми
         formProps={formLister}
       />
+        </div>
+        <div className={css.miniWrapp}> 
       <h2>Контакти</h2>
       <h5>ЗНАЙдіть конТАКт за ім'ям</h5>
       <Filter
@@ -94,6 +105,8 @@ export default function App() {
       ) : (
         <ContactList contacts={contacts} deliter={deliter} />
       )}
+       </div>
+    </div>
     </div>
   );
 }
