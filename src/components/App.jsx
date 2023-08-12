@@ -1,7 +1,9 @@
+// npm install redux
+// npm i react-toastify
+// npm install react-redux
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { ToastContainer } from 'react-toastify';
-// npm i react-toastify
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import css from './ContactForm/ContactForm.module.css';
