@@ -7,7 +7,10 @@ import ContactItem from './ContactItem';
 const ContactList = ({ contacts, deliter }) => {
   // console.log(contacts,"contacts")
   return (
+    <div className={css.miniWrapp}> 
+
     <ul className={css.listCont}>
+      <h3>Контакти</h3>
       {contacts.map(({ id, name, number }) => (
         <ContactItem
           id={id}
@@ -18,6 +21,7 @@ const ContactList = ({ contacts, deliter }) => {
         />
       ))}
     </ul>
+    </div>
   );
 };
 // протайпи
