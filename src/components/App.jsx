@@ -19,13 +19,10 @@ import ContactForm from './ContactForm';
 import Filter from './Filter';
 import ContactList from './ContactList';
 import useLocSt from 'components/hooks/useLocSt';
+// **********************************
+import begincontact from 'redux/unitialAtate';
 
-const begincontact = [
-  { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-  { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-  { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-  { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-];
+
 
 export default function App() {
   const [contacts, setContacts] = useLocSt('contacts', begincontact);
@@ -79,13 +76,16 @@ export default function App() {
         pauseOnHover
         theme="colored"
       />
-      <div className={css.miniWrapp}> 
+      <div className={css.miniWrappBook}> 
+      <div className={css.boorH1}> 
       <h1>Телефонна книга</h1>
       <ContactForm
         // пропс метод  зберігання з форми
         formProps={formLister}
       />
+</div>
         </div>
+      <img className={css.imgBus} width = '200' height={200} src="https://png.pngtree.com/thumb_back/fw800/background/20220523/pngtree-hippie-bus-with-peace-and-love-label-and-flowers-image_1393563.jpg" alt="bus" />
         <div className={css.miniWrapp}> 
       <h2>Контакти</h2>
       <h5>ЗНАЙдіть конТАКт за ім'ям</h5>
@@ -110,3 +110,4 @@ export default function App() {
     </div>
   );
 }
+
