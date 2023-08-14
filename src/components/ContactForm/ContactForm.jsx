@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { getContacts } from 'redux/selectors';
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer } from 'react-toastify';
-import { addContacts } from 'redux/contactsSlice';
 import { toast } from 'react-toastify';
+import { addContacts } from 'redux/contactsSlice';
 import css from './ContactForm.module.css';
 import ButtonSbmt from 'components/ButtonSbmt/ButtonSbmt';
 
@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const   ContactForm = () =>  {
   const dispatch = useDispatch();
-const allContacts = useSelector(getContacts)
+const сontacts = useSelector(getContacts)
 
   // відправник
   const submiter = event => {
@@ -20,10 +20,11 @@ const allContacts = useSelector(getContacts)
       const formNumber = event.target.elements.name.value
       const formName = event.target.elements.name.value;
     //  заборона
-    if (allContacts.some(({ name }) => name === formName)) {
+    if (сontacts.some(({ name }) => name === formName)) {
       return  toast.warn(`👻 Уважніше,  ${formName}  вже Є в конТАКтах 👻`);
          }     
          dispatch(addContacts(formName, formNumber));
+        //  очистка
          form.reset();
   //  console.log(form.elements.name.value, form.elements.number.value)
        
@@ -51,7 +52,7 @@ const allContacts = useSelector(getContacts)
         Ім'я
         <input
           className={css.input}
-          value={allContacts.name}
+          value={сontacts.name}
           // pattern= "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           //  так чомусь помилка в консолі
           type="text"
@@ -68,7 +69,7 @@ const allContacts = useSelector(getContacts)
           className={css.input}
           type="tel"
           placeholder="Введіть номер телефону"
-          value={allContacts.number}
+          value={сontacts.number}
           name="number"
           // pattern= "\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           // i так чомусь помилка в консолі
@@ -88,10 +89,10 @@ const allContacts = useSelector(getContacts)
 }
 
 // // прототайпи
-ContactForm.propTypes = {
-  number: PropTypes.number,
-  name: PropTypes.string,
-};
+// ContactForm.propTypes = {
+//   number: PropTypes.number,
+//   name: PropTypes.string,
+// };
 
 
 export default ContactForm

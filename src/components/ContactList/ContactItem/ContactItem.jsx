@@ -8,8 +8,9 @@ import css from './ContactItem.module.css';
 
 const ContactItem = ({ name, number, id, }) => {
   const dispatch = useDispatch();
-  const deliter = userId => {
-    dispatch(deletecontacts(userId));
+  const deliter = (id) => {
+    dispatch(deletecontacts(id));
+    console.log(id); 
   };
 
 
@@ -18,10 +19,7 @@ const ContactItem = ({ name, number, id, }) => {
       {name}: {number}
       <button
         className={css.listContDell}
-        onClick={() => {
-          deliter(id);
-        }}
-      >
+        onClick={() => deliter(id)}   >
         <span className={css.listContDellX}>Х</span>
       </button>
     </li>
