@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 import ContactItem from './ContactItem';
 
+
 const ContactList = ({ contacts, deliter }) => {
   // console.log(contacts,"contacts")
   return (
@@ -11,7 +12,7 @@ const ContactList = ({ contacts, deliter }) => {
 
     <ul className={css.listCont}>
       <h3>Контакти</h3>
-      {contacts.map(({ id, name, number }) => (
+      {contacts?.map(({ id, name, number }) => (
         <ContactItem
           id={id}
           key={id}

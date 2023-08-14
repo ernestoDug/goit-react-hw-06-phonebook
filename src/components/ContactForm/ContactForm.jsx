@@ -1,50 +1,46 @@
-// import { nanoid } from 'nanoid'
 import PropTypes from 'prop-types';
-
-
-import { useDispatch } from "react-redux";
-import { addContacts } from 'redux/actions';
+import { getContacts } from 'redux/selectors';
+import { useDispatch, useSelector } from "react-redux";
 import css from './ContactForm.module.css';
+import { ToastContainer } from 'react-toastify';
+import { addContacts } from 'redux/contactsSlice';
+import { toast } from 'react-toastify';
 
-export  const  ContactForm = () =>  {
+import 'react-toastify/dist/ReactToastify.css';
+
+const   ContactForm = () =>  {
   const dispatch = useDispatch();
+const allContacts = useSelector(getContacts)
 
-  // обранник універсальний
-  const changer = event => {
-    const { name } = event.target;
-    switch (name) {
-      case 'name': {
-        // setName(value);
-        break;
-      }
-      case 'number': {
-        // setNumber(value);
-
-        break;
-      }
-      default:
-        return;
-    }
-  };
-
-  // const deliter = id => {
-  //   const goodBayContact = contacts.filter(contact => contact.id !== id);
-  //   setContacts(contacts => goodBayContact);
-  // };
   // відправник
   const submiter = event => {
     event.preventDefault();
      const form = event.target;
-    dispatch(addContacts(form.elements.text.value));
-    form.reset();
-    
-    
-    
-    // виклик методу з ап
-    
+      const formNumber = event.target.elements.name.value
+      const formName = event.target.elements.name.value;
+    //  заборона
+    if (allContacts.some(({ name }) => name === formName)) {
+      return  toast.warn(`👻 Уважніше,  ${formName}  вже Є в конТАКтах 👻`);
+         }     
+         dispatch(addContacts(formName, formNumber));
+         form.reset();
+  //  console.log(form.elements.name.value, form.elements.number.value)
+       
   };
   return (
     <>
+     <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
         <div className= {css.phoneBookWrapp}>
         <div className={css.forms}>
         <div className={css.boorH1}> 
@@ -54,8 +50,7 @@ export  const  ContactForm = () =>  {
         Ім'я
         <input
           className={css.input}
-          onChange={changer}
-          // value={name}
+          value={allContacts.name}
           // pattern= "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           //  так чомусь помилка в консолі
           type="text"
@@ -72,12 +67,10 @@ export  const  ContactForm = () =>  {
           className={css.input}
           type="tel"
           placeholder="Введіть номер телефону"
-          onChange={changer}
-          // value={number}
+          value={allContacts.number}
           name="number"
           // pattern= "\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           // i так чомусь помилка в консолі
-
           title="Номер телефону має складатися з цифр і може містити пробіли, тире, круглі дужки та починатися з +"
           required
         />
@@ -100,3 +93,6 @@ ContactForm.propTypes = {
   number: PropTypes.number,
   name: PropTypes.string,
 };
+
+
+export default ContactForm
