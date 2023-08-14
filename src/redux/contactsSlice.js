@@ -8,11 +8,11 @@ const contactsInitialState = [
     { id: 'id-2', name: 'Ringo Starr', number: '443-89-12' },
   ];
 
-// 2
+// 
 const contactsSlice = createSlice({
   name: "contacts",
   initialState: contactsInitialState,
-  // .3
+  // .+кон
   reducers: {
         addContacts: {
       reducer(state, action) {
@@ -28,8 +28,9 @@ const contactsSlice = createSlice({
         };
       },
     },
-    deletecontacts(state, action) {
-      return state.filter(contact => contact.id !== action.payload);
+    // - кон
+    deletecontacts(state, {payload}) {
+      return state.filter(contact => contact.id !== payload);
     },
      },
 });

@@ -2,7 +2,7 @@
 import { useDispatch, useSelector  } from "react-redux";
 // import { addContacts } from 'redux/actions';
 import { getContactsFilter } from 'redux/selectors';
-import { setContactsFilter } from "redux/filtersSlice";
+import { filterContacts } from "redux/filtersSlice";
 import css from './Filter.module.css';
 // import { setContactsFilter } from 'redux/actions';
 
@@ -12,10 +12,11 @@ export  const Filter = () => {
   const filter = useSelector(getContactsFilter);
 
 
+// знятта та запис фільтрації
+  const filterChanger = ({ currentTarget: { value } }) => {
 
-  const handleChangeFilter = ({ currentTarget: { value } }) => {
-    const normalizedValue = value.toLowerCase().trim();
-    dispatch(setContactsFilter(normalizedValue));
+    dispatch(filterContacts(value));
+    console.log(value)
   };
 
   return (
@@ -27,7 +28,7 @@ export  const Filter = () => {
         name="filter"
         className={css.filter}
         type="text"
-        onChange={   handleChangeFilter}
+        onChange={   filterChanger}
         placeholder="Введіть ім'я контакту"
         title="Ім'я може містити лише літери, апостроф, тире та пробіли. Наприклад Адріан, Джейкоб Мерсер, Шарль де Бац де Кастельмор д'Артаньян"
      value={filter}
