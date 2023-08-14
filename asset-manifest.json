@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ernestoDug.github.io/goit-react-hw-06-phonebook/static/css/main.c0242597.css",
-    "main.js": "/ernestoDug.github.io/goit-react-hw-06-phonebook/static/js/main.1a40937f.js",
+    "main.css": "/ernestoDug.github.io/goit-react-hw-06-phonebook/static/css/main.d0843902.css",
+    "main.js": "/ernestoDug.github.io/goit-react-hw-06-phonebook/static/js/main.32836a4e.js",
     "index.html": "/ernestoDug.github.io/goit-react-hw-06-phonebook/index.html",
-    "main.c0242597.css.map": "/ernestoDug.github.io/goit-react-hw-06-phonebook/static/css/main.c0242597.css.map",
-    "main.1a40937f.js.map": "/ernestoDug.github.io/goit-react-hw-06-phonebook/static/js/main.1a40937f.js.map"
+    "main.d0843902.css.map": "/ernestoDug.github.io/goit-react-hw-06-phonebook/static/css/main.d0843902.css.map",
+    "main.32836a4e.js.map": "/ernestoDug.github.io/goit-react-hw-06-phonebook/static/js/main.32836a4e.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0242597.css",
-    "static/js/main.1a40937f.js"
+    "static/css/main.d0843902.css",
+    "static/js/main.32836a4e.js"
   ]
 }
