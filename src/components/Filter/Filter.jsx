@@ -1,48 +1,45 @@
 // import PropTypes from 'prop-types';
-// // import { createSlice } from "@reduxjs/toolkit";
-// import { useDispatch } from "react-redux";
-// // import { addContacts } from 'redux/actions';
-// import { getContactsFilter } from 'redux/selectors';
-// import { useSelector } from 'react-redux';
-// import css from './Filter.module.css';
+import { useDispatch, useSelector  } from "react-redux";
+// import { addContacts } from 'redux/actions';
+import { getContactsFilter } from 'redux/selectors';
+import { setContactsFilter } from "redux/filtersSlice";
+import css from './Filter.module.css';
 // import { setContactsFilter } from 'redux/actions';
 
 
-// export  const Filter = () => {
-//   const dispatch = useDispatch();
-//   const filter = useSelector(getContactsFilter);
+export  const Filter = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector(getContactsFilter);
 
 
 
-//   // const formFilter = event => {
-//   //   const { value } = event.target;
-//   // };
-//   // // фільтрат
-//   // const filtrat = contacts.filter(contact =>
-//   //   contact.name.toLowerCase().includes(filterCon.toLowerCase())
-//   // );
- 
+  const handleChangeFilter = ({ currentTarget: { value } }) => {
+    const normalizedValue = value.toLowerCase().trim();
+    dispatch(setContactsFilter(normalizedValue));
+  };
 
-//   return (
+  return (
   
-//     <div className={css.miniWrapp}> 
-//       <h4>ЗНАЙдіть конТАКт за ім'ям</h4>
-//       <input
-//         name="filter"
-//         className={css.filter}
-//         type="text"
-//         onChange={    dispatch(setContactsFilter(filter))}
-//         placeholder="Введіть ім'я контакту"
-//         title="Ім'я може містити лише літери, апостроф, тире та пробіли. Наприклад Адріан, Джейкоб Мерсер, Шарль де Бац де Кастельмор д'Артаньян"
-//       />
-//       </div>
+    <div className={css.miniWrapp}> 
     
-//   );
-// };
+      <h4>ЗНАЙдіть конТАКт за ім'ям</h4>
+      <input
+        name="filter"
+        className={css.filter}
+        type="text"
+        onChange={   handleChangeFilter}
+        placeholder="Введіть ім'я контакту"
+        title="Ім'я може містити лише літери, апостроф, тире та пробіли. Наприклад Адріан, Джейкоб Мерсер, Шарль де Бац де Кастельмор д'Артаньян"
+     value={filter}
+     />
+      </div>
+    
+  );
+};
 
-// // проптайпи
+// проптайпи
 // Filter.propTypes = {
 //   filterProp: PropTypes.func.isRequired,
 // };
 
-// export default Filter;
+export default Filter;

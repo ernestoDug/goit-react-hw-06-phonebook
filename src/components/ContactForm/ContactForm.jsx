@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import { getContacts } from 'redux/selectors';
 import { useDispatch, useSelector } from "react-redux";
-import css from './ContactForm.module.css';
 import { ToastContainer } from 'react-toastify';
 import { addContacts } from 'redux/contactsSlice';
 import { toast } from 'react-toastify';
+import css from './ContactForm.module.css';
+import ButtonSbmt from 'components/ButtonSbmt/ButtonSbmt';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -75,10 +76,8 @@ const allContacts = useSelector(getContacts)
           required
         />
       </label>
-
-      <button className={css.buttons} type="submit">
-        Додати контакт{' '}
-      </button>
+      <ButtonSbmt/>
+     
     </form>
     </div>
     </div>

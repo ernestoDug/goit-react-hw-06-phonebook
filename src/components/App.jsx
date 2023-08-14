@@ -5,7 +5,7 @@ import { Layout } from './Loyaout/Layout';
 // import 'react-toastify/dist/ReactToastify.css';
 
 import ContactForm from './ContactForm';
-// import Filter from './Filter';
+import Filter from './Filter';
 import ContactList from './ContactList';
 // **********************************
 
@@ -30,9 +30,7 @@ export default function App() {
 
         />
         <div className='wrFcon'> 
-           {/* <Filter
-
-      />  */}
+           <Filter/> 
 
         <ContactList
 />
