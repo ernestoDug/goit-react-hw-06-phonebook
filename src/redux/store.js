@@ -1,6 +1,6 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-// для лок ст
-import storage from 'redux-persist/lib/storage';
+import { configureStore } from '@reduxjs/toolkit';
+
+// для ігнору
 import {
   FLUSH,
   PERSIST,
@@ -9,24 +9,9 @@ import {
   persistStore,
   REHYDRATE,
   PAUSE,
-  persistReducer,
 } from 'redux-persist';
-import { contactsReducer } from './contactsSlice';
-import { filtersReducer } from './filtersSlice';
-
-const persistConfig = {
-  key: 'root',
-  storage,
-  whitelist: ['contacts'],
-};
-// поєднувач редюсерів
-const rootReducer = combineReducers({
-  contacts: contactsReducer,
-  filters: filtersReducer,
-});
 // для л/с
-const persistedReducer = persistReducer(persistConfig, 
-  rootReducer);
+import { persistedReducer } from './Persist';
 
 export const store = configureStore({
   devTools: true,

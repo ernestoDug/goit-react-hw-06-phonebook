@@ -7,7 +7,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
 code {
@@ -15,8 +14,9 @@ code {
     monospace;
 }
 
-h3, h4{
-  opacity: .8;
+h3,
+h4 {
+  opacity: 0.8;
   color: rgb(85, 77, 190);
   text-align: center;
   border-radius: 20px/60px;
@@ -25,8 +25,7 @@ h3, h4{
   padding: 10px;
 }
 
-.wrFcon
-{
+.wrFcon {
   display: block;
   margin-top: 80px;
 }

@@ -1,22 +1,21 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from '@reduxjs/toolkit';
 
-// 1
 const contactsInitialState = [
-    { id: 'id-4', name: 'John Lennon', number: '227-91-26' },
-    { id: 'id-3', name: 'Paul McCartney', number: '645-17-79' },
-    { id: 'id-1', name: 'George Harrison', number: '459-12-56' },
-    { id: 'id-2', name: 'Ringo Starr', number: '443-89-12' },
-  ];
+  { id: 'id-4', name: 'John Lennon', number: '09-10-19-40' },
+  { id: 'id-3', name: 'Paul McCartney', number: '18-07-19-42' },
+  { id: 'id-1', name: 'George Harrison', number: '25-02-19-43' },
+  { id: 'id-2', name: 'Ringo Starr', number: '07-07-19-40' },
+];
 
-// 
+//
 const contactsSlice = createSlice({
-  name: "contacts",
+  name: 'contacts',
   initialState: contactsInitialState,
-  // .+кон
   reducers: {
-        addContacts: {
+    // додаватор
+    addContactsAct: {
       reducer(state, action) {
-      return  [...state, action.payload];
+        return [...state, action.payload];
       },
       prepare(name, number) {
         return {
@@ -28,12 +27,13 @@ const contactsSlice = createSlice({
         };
       },
     },
-    // - кон
-    deletecontacts(state, {payload}) {
+    // видалятор
+    deleteContactsAct(state, { payload }) {
       return state.filter(contact => contact.id !== payload);
     },
-     },
+  },
 });
+console.log(contactsSlice);
 
-export const { addContacts, deletecontacts,  } = contactsSlice.actions;
+export const { addContactsAct, deleteContactsAct } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
