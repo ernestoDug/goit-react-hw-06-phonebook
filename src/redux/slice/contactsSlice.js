@@ -33,7 +33,7 @@ const contactsSlice = createSlice({
     },
   },
 });
-// console.log(contactsSlice);
+// console.log(contactsSlice.actions);
 
 export const { addContactsAct, deleteContactsAct } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;

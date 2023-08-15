@@ -7,7 +7,7 @@ const CounterContacts = () => {
 
   return (
     <p className={css.counter}>
-      Кількісь контактів в книзі: {contacts.length}{' '}
+      Контактів в книзі: {contacts.length}{' '}
     </p>
   );
 };

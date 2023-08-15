@@ -3,8 +3,8 @@ import { combineReducers } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import persistReducer from 'redux-persist/es/persistReducer';
 
-import { contactsReducer } from './contactsSlice';
-import { filtersReducer } from './filtersSlice';
+import { contactsReducer } from './slice/contactsSlice';
+import { filtersReducer } from './slice/filtersSlice';
 
 const persistConfig = {
   key: 'root',
@@ -17,5 +17,4 @@ const rootReducer = combineReducers({
   contacts: contactsReducer,
   filters: filtersReducer,
 });
-// для л/с
 export const persistedReducer = persistReducer(persistConfig, rootReducer);

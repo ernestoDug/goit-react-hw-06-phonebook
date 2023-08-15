@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import css from './ContactForm.module.css';
 
 import ButtonSbmt from 'components/ButtonSbmt/ButtonSbmt';
-import { addContactsAct } from 'redux/contactsSlice';
+import { addContactsAct } from 'redux/slice/contactsSlice';
 import CounterContacts from 'components/CounterComtacts/CounterContacts';
 
 const ContactForm = () => {

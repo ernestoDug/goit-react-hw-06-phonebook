@@ -11,7 +11,7 @@ import {
   PAUSE,
 } from 'redux-persist';
 // для л/с
-import { persistedReducer } from './Persist';
+import { persistedReducer } from './persistedReducer';
 
 export const store = configureStore({
   devTools: true,
