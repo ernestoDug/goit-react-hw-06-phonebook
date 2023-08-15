@@ -8,6 +8,7 @@ import css from './ContactForm.module.css';
 
 import ButtonSbmt from 'components/ButtonSbmt/ButtonSbmt';
 import { addContactsAct } from 'redux/contactsSlice';
+import CounterContacts from 'components/CounterComtacts/CounterContacts';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -43,42 +44,41 @@ const ContactForm = () => {
         theme="colored"
       />
       <div className={css.phoneBookWrapp}>
+        <CounterContacts />
         <div className={css.forms}>
-          <div className={css.boorH1}>
-            <h3>Телефонна книга</h3>
-            <form onSubmit={submiter} className={css.formsWr}>
-              <label className={css.label}>
-                Ім'я
-                <input
-                  className={css.input}
-                  value={сontacts.name}
-                  // pattern= "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                  //  так чомусь помилка в консолі
-                  type="text"
-                  placeholder="Введіть ім'я"
-                  title="Ім'я може містити лише літери, апостроф, тире та пробіли. Наприклад Адріан, Джейкоб Мерсер, Шарль де Бац де Кастельмор д'Артаньян"
-                  name="name"
-                  required
-                />
-              </label>
+          <h3>Телефонна книга</h3>
+          <form onSubmit={submiter} className={css.formsWr}>
+            <label className={css.label}>
+              Ім'я
+              <input
+                className={css.input}
+                value={сontacts.name}
+                // pattern= "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                //  так чомусь помилка в консолі
+                type="text"
+                placeholder="Введіть ім'я"
+                title="Ім'я може містити лише літери, апостроф, тире та пробіли. Наприклад Адріан, Джейкоб Мерсер, Шарль де Бац де Кастельмор д'Артаньян"
+                name="name"
+                required
+              />
+            </label>
 
-              <label className={css.label}>
-                Номер телефону
-                <input
-                  className={css.input}
-                  type="tel"
-                  placeholder="Введіть номер телефону"
-                  value={сontacts.number}
-                  name="number"
-                  // pattern= "\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                  // i так чомусь помилка в консолі
-                  title="Номер телефону має складатися з цифр і може містити пробіли, тире, круглі дужки та починатися з +"
-                  required
-                />
-              </label>
-              <ButtonSbmt />
-            </form>
-          </div>
+            <label className={css.label}>
+              Номер телефону
+              <input
+                className={css.input}
+                type="tel"
+                placeholder="Введіть номер телефону"
+                value={сontacts.number}
+                name="number"
+                // pattern= "\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                // i так чомусь помилка в консолі
+                title="Номер телефону має складатися з цифр і може містити пробіли, тире, круглі дужки та починатися з +"
+                required
+              />
+            </label>
+            <ButtonSbmt />
+          </form>
         </div>
         <img
           className={css.imgBus}

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import css from './ContactList.module.css';
 
@@ -34,9 +34,9 @@ const ContactList = () => {
   );
 };
 // протайпи
-ContactList.propTypes = {
-  number: PropTypes.number,
-  name: PropTypes.string,
-  id: PropTypes.string,
-};
+// ContactList.propTypes = {
+//   number: PropTypes.number,
+//   name: PropTypes.string,
+//   id: PropTypes.string,
+// };
 export default ContactList;

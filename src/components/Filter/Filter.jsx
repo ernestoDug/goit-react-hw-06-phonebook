@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import css from './Filter.module.css';
 
 import { getContactsFilter } from 'redux/selectors';
-import { filterContacts } from 'redux/filtersSlice';
+import { filterContactsAct } from 'redux/filtersSlice';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -11,8 +11,8 @@ export const Filter = () => {
 
   // зняття та запис фільтрації
   const filterChanger = ({ currentTarget: { value } }) => {
-    dispatch(filterContacts(value));
-    console.log(value);
+    dispatch(filterContactsAct(value));
+    // console.log(value);
   };
 
   return (

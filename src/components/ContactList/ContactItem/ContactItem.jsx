@@ -8,7 +8,7 @@ const ContactItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
   const deliter = id => {
     dispatch(deleteContactsAct(id));
-    console.log(id);
+    // console.log(id);
   };
 
   return (
@@ -23,8 +23,8 @@ const ContactItem = ({ name, number, id }) => {
 
 // протайпи
 ContactItem.propTypes = {
-  name: PropTypes.string,
-  number: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
 };
 
 export default ContactItem;

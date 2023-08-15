@@ -1,60 +1,41 @@
-.phoneBookWrapp
-{
-display: flex;
-align-items: center;
-margin-top: 50px;
-align-items: center;
-padding-top: 40px;
-
+.phoneBookWrapp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 200px;
+  /* border: 2px solid white; */
+  margin-left: 15px;
 }
 
-
-body{
+body {
   background-image: url(https://celes.club/uploads/posts/2022-05/1653049916_2-celes-club-p-etnicheskii-fon-krasivie-2.jpg);
 }
 
 .forms {
-   
-  border-radius: 20px/60px;
- 
-  justify-content: space-between;
- padding: 35px;
- font-size: 35px;
- color: rgb(245, 245, 245);
- 
-
-
+  font-size: 25px;
+  margin-left: auto;
 }
 
-.miniWrapp
-{
- 
+.miniWrapp {
   font-weight: 600;
-font-size: 20px;
+  font-size: 20px;
 }
 
-
-
-.miniWrappBook
-{
-composes: miniWrapp;
-height: 60%;
-align-items: center;
-padding-left: 0;
-/*  */
+.miniWrappBook {
+  composes: miniWrapp;
+  height: 60%;
+  align-items: center;
+  padding-left: 0;
 }
-.imgBus
-{
+.imgBus {
   border-radius: 20px/60px;
-  opacity: .8;
-  margin-top: 80px;
-transform: rotate(-25deg);
-transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 2000ms;
+  opacity: 0.8;
+  transform: rotate(-25deg);
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 2000ms;
+  margin-left: 55px;
 }
-.imgBus:hover
-{
+.imgBus:hover {
   transform: rotate(10deg);
-
 }
 
 .formsWr {
@@ -81,15 +62,11 @@ transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 2000ms;
     border-color: #10100f;
     background: linear-gradient(to bottom, #33ccff 0%, #70c4eb 100%);
     border-radius: 20px/60px;
-    
   }
   &:hover {
     background: linear-gradient(to bottom, #33ccff 0%, #70c4eb 100%);
-
   }
 }
-
-
 
 .label {
   font-size: 25px;
@@ -98,18 +75,14 @@ transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 2000ms;
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: .8;
-  
+  opacity: 0.8;
 }
 
-.boorH1
-{
-  display: block;
-}
-h1, h2, h5 {
+h1,
+h2,
+h5 {
   background: linear-gradient(to bottom, #33ccff 6%, #cc66ff 100%);
   text-align: center;
   border-radius: 20px/60px;
-  color:    #e3dce0
-  ;
+  color: #e3dce0;
 }
