@@ -80,13 +80,13 @@ const ContactForm = () => {
             <ButtonSbmt />
           </form>
         </div>
-        {/* <img
+        <img
           className={css.imgBus}
           width="200"
           height={200}
           src="https://png.pngtree.com/thumb_back/fw800/background/20220523/pngtree-hippie-bus-with-peace-and-love-label-and-flowers-image_1393563.jpg"
           alt="bus"
-        /> */}
+        />
       </div>
     </>
   );
